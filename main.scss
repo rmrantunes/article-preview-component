@@ -9,16 +9,181 @@ $light-grayish-blue: hsl(210, 46%, 95%);
 
 @mixin desktop {
   @media screen and (min-width: 720px) {
-    @content
+    @content;
   }
 }
 
-* {
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
+
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 20px;
+
+  @include flexCenter();
+
+  background-color: $light-grayish-blue;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &__img {
+    width: 100%;
+    height: 180px;
+    background: url("images/drawers.jpg") no-repeat center center;
+    background-size: cover;
+
+    border-radius: 10px 10px 0 0;
+
+    @include desktop {
+      border-radius: 10px 0 0 10px;
+    }
+  }
+
+  &__content {
+    padding: 30px 30px 0 30px;
+
+    background-color: white;
+
+    border-radius: 0 0 10px 10px;
+
+    @include desktop {
+      border-radius: 0 10px 10px 0;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      letter-spacing: 0.01rem;
+      color: $very-dark-grayish-blue;
+    }
+
+    p {
+      margin-top: 1rem;
+      line-height: 1.7;
+      color: $desaturated-dark-blue;
+    }
+  }
+
+  &__profile {
+    padding: 20px 0 15px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__profile-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__profile-pic {
+    img {
+      height: 36px;
+      border-radius: 50%;
+    }
+  }
+
+  &__profile-info {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    letter-spacing: 0.2px;
+    font-weight: bold;
+    color: $very-dark-grayish-blue;
+  }
+
+  &__date {
+    color: $grayish-blue;
+  }
+
+  &__share-btn {
+    cursor: pointer;
+    background-color: $light-grayish-blue;
+
+    height: 32px;
+    width: 32px;
+
+    border-radius: 50%;
+    z-index: 9;
+
+    @include flexCenter();
+  }
+
+  &__share {
+    display: none;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    opacity: 0;
+    z-index: 7;
+    transition: all 0.5 ease;
+
+    &__share--active {
+      display: block;
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      padding: 15px 30px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-radius: 0 0 10px 10px;
+      background-color: $very-dark-grayish-blue;
+      span {
+        display: flex;
+        align-items: center;
+        height: 36px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: bold;
+        color: $desaturated-dark-blue;
+        margin-right: 1.5rem;
+      }
+
+      img {
+        height: 18px;
+      }
+
+      img + img {
+        margin-left: 1rem;
+      }
+    }
+  }
 }
