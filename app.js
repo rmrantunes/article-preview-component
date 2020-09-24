@@ -1,8 +1,9 @@
 function shareIt() {
   const shareBtn = document.querySelector(".card__share-btn");
+  const share = document.querySelector(".card__share")
 
   shareBtn.addEventListener("click", () => {
-    shareBtn.classList.add("card__share-btn--active");
+    share.classList.toggle("card__share--active");
   });
 }
 

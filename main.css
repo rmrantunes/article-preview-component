@@ -162,23 +162,13 @@ body {
 }
 
 .card__share {
-  display: none;
-  position: absolute;
-  bottom: -100%;
-  left: 0;
   opacity: 0;
-  z-index: 7;
-  -webkit-transition: all 0.5 ease;
-  transition: all 0.5 ease;
-}
-
-.card__share__share--active {
-  display: block;
-  opacity: 1;
   position: absolute;
   left: 0;
-  bottom: 0;
-  display: block;
+  bottom: -80px;
+  z-index: 7;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
   padding: 15px 30px;
   width: 100%;
   display: -webkit-box;
@@ -191,7 +181,7 @@ body {
   background-color: #48556a;
 }
 
-.card__share__share--active span {
+.card__share span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,11 +196,16 @@ body {
   margin-right: 1.5rem;
 }
 
-.card__share__share--active img {
+.card__share img {
   height: 18px;
 }
 
-.card__share__share--active img + img {
+.card__share img + img {
   margin-left: 1rem;
+}
+
+.card__share--active {
+  opacity: 1;
+  bottom: 0;
 }
 /*# sourceMappingURL=main.css.map */
