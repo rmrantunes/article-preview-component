@@ -235,13 +235,15 @@ body {
   .card__share::after {
     content: "";
     position: absolute;
-    right: 48%;
-    bottom: -7px;
+    right: 47.5%;
+    bottom: -7.5px;
     width: 15px;
     height: 15px;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     background-color: #48556a;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -253,7 +255,6 @@ body {
 @media screen and (min-width: 720px) {
   .card__share--active {
     left: auto;
-    right: -65px;
     bottom: 80px;
   }
 }

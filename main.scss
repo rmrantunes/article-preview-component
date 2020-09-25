@@ -205,14 +205,15 @@ body {
         content: "";
 
         position: absolute;
-        right: 48%;
-        bottom: -7px;
+        right: 47.5%;
+        bottom: -7.5px;
         width: 15px;
         height: 15px;
 
         transform: rotate(45deg);
         
         background-color: $very-dark-grayish-blue;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
       }
     }
 
@@ -221,7 +222,6 @@ body {
       bottom: 0;
       @include desktop {
         left: auto;
-        right: -65px;
         bottom: 80px;
       }
     }
